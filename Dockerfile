@@ -22,3 +22,5 @@ RUN cat /tmp/Caddyfile | sed -e "1c :$PORT" -e "s/\$AUUID/$AUUID/g" >/etc/caddy/
 RUN cat /tmp/xray.json | sed -e "s/\$AUUID/$AUUID/g" -e "s/\$ParameterSSENCYPT/$ParameterSSENCYPT/g" > /xray.json
 
 RUN chmod +x /start.sh
+
+CMD /start.sh
