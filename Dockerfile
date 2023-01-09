@@ -10,6 +10,8 @@ ADD etc/xray.json /tmp/xray.json
 ADD deploy.sh /deploy.sh
 ADD start.sh /start.sh
 
+RUN chmod +x /deploy.sh
+
 RUN apk update && \
     apk add --no-cache ca-certificates bash caddy tor unzip wget && \
     bash deploy.sh
